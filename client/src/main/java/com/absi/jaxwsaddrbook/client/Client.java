@@ -35,7 +35,7 @@ public class Client
         addrBookService.addPerson(new Person("Jack", "Wolfskin", "jackws@google.com"));
         addrBookService.addPerson(new Person("Ann", "Kobayashi", "anakobayashi@google.pl"));
         List<Person> persons = addrBookService.getWholeBook();
-        //.stream().forEach(p -> System.out.println(p.getName()));
+        persons.stream().forEach(p -> System.out.println(p.getName()));
         System.out.println(addrBookService.getWholeBookAsString());
 
         //addrBookService.getWholeBook().stream().forEach(p -> System.out.println(p.toString()));
