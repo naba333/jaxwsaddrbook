@@ -20,7 +20,7 @@ public class Client
 
 	public static void main(String args[]) throws Exception
 	{
-		URL wsdlUrl = new URL("http://localhost:8080/webapp/AddressBookInterfaceImplService?wsdl");
+		URL wsdlUrl = new URL("http://localhost:8080/webapp/AddressBookInterfaceImpl?wsdl");
  
         //qualifier name ...
         QName qname = new QName("http://webapp.jaxwsaddrbook.absi.com/", "AddressBookInterfaceImplService");
@@ -35,7 +35,7 @@ public class Client
         addrBookService.addPerson(new Person("Jack", "Wolfskin", "jackws@google.com"));
         addrBookService.addPerson(new Person("Ann", "Kobayashi", "anakobayashi@google.pl"));
         List<Person> persons = addrBookService.getWholeBook();
-        //.stream().forEach(p -> System.out.println(p.getName()));
+        persons.stream().forEach(p -> System.out.println(p.getName()));
         System.out.println(addrBookService.getWholeBookAsString());
 
         //addrBookService.getWholeBook().stream().forEach(p -> System.out.println(p.toString()));
